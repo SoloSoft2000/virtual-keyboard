@@ -5,3 +5,10 @@ body {
 h1 {
     color: blue;
 }
+
+.keyboard {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    border: 2px solid black;
+}
