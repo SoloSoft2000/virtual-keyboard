@@ -1,0 +1,601 @@
+{
+  "row0" : [
+  {
+    "Code": "Backquote",
+    "En": "`",
+    "Shift": "~",
+    "Caps": null,
+    "Ru": "ё",
+    "RuShift": null,
+    "RuCaps": "Ё"
+  },
+  {
+    "Code": "Digit1",
+    "En": "1",
+    "Shift": "!",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null
+  },
+  {
+    "Code": "Digit2",
+    "En": "2",
+    "Shift": "@",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": "\"",
+    "RuCaps": null
+  },
+  {
+    "Code": "Digit3",
+    "En": "3",
+    "Shift": "#",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": "№",
+    "RuCaps": null
+  },
+  {
+    "Code": "Digit4",
+    "En": "4",
+    "Shift": "$",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": ";",
+    "RuCaps": null
+  },
+  {
+    "Code": "Digit5",
+    "En": "5",
+    "Shift": "%",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": "%",
+    "RuCaps": null
+  },
+  {
+    "Code": "Digit6",
+    "En": "6",
+    "Shift": "^",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": ":",
+    "RuCaps": null
+  },
+  {
+    "Code": "Digit7",
+    "En": "7",
+    "Shift": "&",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": "?",
+    "RuCaps": null
+  },
+  {
+    "Code": "Digit8",
+    "En": "8",
+    "Shift": "*",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null
+  },
+  {
+    "Code": "Digit9",
+    "En": "9",
+    "Shift": "(",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null
+  },
+  {
+    "Code": "Digit0",
+    "En": "0",
+    "Shift": ")",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null
+  },
+  {
+    "Code": "Minus",
+    "En": "-",
+    "Shift": "_",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null
+  },
+  {
+    "Code": "Equal",
+    "En": "=",
+    "Shift": "+",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null
+  },
+  {
+    "Code": "Backspace",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_backspace"
+  }],
+  "row1" : [
+  {
+    "Code": "Tab",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "__tab"
+  },
+  {
+    "Code": "KeyQ",
+    "En": "q",
+    "Shift": null,
+    "Caps": "Q",
+    "Ru": "й",
+    "RuShift": null,
+    "RuCaps": "Й"
+  },
+  {
+    "Code": "KeyW",
+    "En": "w",
+    "Shift": null,
+    "Caps": "W",
+    "Ru": "ц",
+    "RuShift": null,
+    "RuCaps": "Ц"
+  },
+  {
+    "Code": "KeyE",
+    "En": "e",
+    "Shift": null,
+    "Caps": "E",
+    "Ru": "у",
+    "RuShift": null,
+    "RuCaps": "У"
+  },
+  {
+    "Code": "KeyR",
+    "En": "r",
+    "Shift": null,
+    "Caps": "R",
+    "Ru": "к",
+    "RuShift": null,
+    "RuCaps": "К"
+  },
+  {
+    "Code": "KeyT",
+    "En": "t",
+    "Shift": null,
+    "Caps": "T",
+    "Ru": "е",
+    "RuShift": null,
+    "RuCaps": "Е"
+  },
+  {
+    "Code": "KeyY",
+    "En": "y",
+    "Shift": null,
+    "Caps": "Y",
+    "Ru": "н",
+    "RuShift": null,
+    "RuCaps": "Н"
+  },
+  {
+    "Code": "KeyU",
+    "En": "u",
+    "Shift": null,
+    "Caps": "U",
+    "Ru": "г",
+    "RuShift": null,
+    "RuCaps": "Г"
+  },
+  {
+    "Code": "KeyI",
+    "En": "i",
+    "Shift": null,
+    "Caps": "I",
+    "Ru": "ш",
+    "RuShift": null,
+    "RuCaps": "Ш"
+  },
+  {
+    "Code": "KeyO",
+    "En": "o",
+    "Shift": null,
+    "Caps": "O",
+    "Ru": "щ",
+    "RuShift": null,
+    "RuCaps": "Щ"
+  },
+  {
+    "Code": "KeyP",
+    "En": "p",
+    "Shift": null,
+    "Caps": "P",
+    "Ru": "з",
+    "RuShift": null,
+    "RuCaps": "З"
+  },
+  {
+    "Code": "BracketLeft",
+    "En": "[",
+    "Shift": "{",
+    "Caps": null,
+    "Ru": "х",
+    "RuShift": null,
+    "RuCaps": "Х"
+  },
+  {
+    "Code": "BracketRight",
+    "En": "]",
+    "Shift": "}",
+    "Caps": null,
+    "Ru": "ъ",
+    "RuShift": null,
+    "RuCaps": "Ъ"
+  },
+  {
+    "Code": "Delete",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_delete"
+  }],
+  "row2" : [
+  {
+    "Code": "CapsLock",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "__caps"
+  },
+  {
+    "Code": "KeyA",
+    "En": "a",
+    "Shift": null,
+    "Caps": "A",
+    "Ru": "ф",
+    "RuShift": null,
+    "RuCaps": "Ф"
+  },
+  {
+    "Code": "KeyS",
+    "En": "s",
+    "Shift": null,
+    "Caps": "S",
+    "Ru": "ы",
+    "RuShift": null,
+    "RuCaps": "Ы"
+  },
+  {
+    "Code": "KeyD",
+    "En": "d",
+    "Shift": null,
+    "Caps": "D",
+    "Ru": "в",
+    "RuShift": null,
+    "RuCaps": "В"
+  },
+  {
+    "Code": "KeyF",
+    "En": "f",
+    "Shift": null,
+    "Caps": "F",
+    "Ru": "а",
+    "RuShift": null,
+    "RuCaps": "А"
+  },
+  {
+    "Code": "KeyG",
+    "En": "g",
+    "Shift": null,
+    "Caps": "G",
+    "Ru": "п",
+    "RuShift": null,
+    "RuCaps": "П"
+  },
+  {
+    "Code": "KeyH",
+    "En": "h",
+    "Shift": null,
+    "Caps": "H",
+    "Ru": "р",
+    "RuShift": null,
+    "RuCaps": "Р"
+  },
+  {
+    "Code": "KeyJ",
+    "En": "j",
+    "Shift": null,
+    "Caps": "J",
+    "Ru": "о",
+    "RuShift": null,
+    "RuCaps": "О"
+  },
+  {
+    "Code": "KeyK",
+    "En": "k",
+    "Shift": null,
+    "Caps": "K",
+    "Ru": "л",
+    "RuShift": null,
+    "RuCaps": "Л"
+  },
+  {
+    "Code": "KeyL",
+    "En": "l",
+    "Shift": null,
+    "Caps": "L",
+    "Ru": "д",
+    "RuShift": null,
+    "RuCaps": "Д"
+  },
+  {
+    "Code": "Semicolon",
+    "En": ";",
+    "Shift": ":",
+    "Caps": null,
+    "Ru": "ж",
+    "RuShift": null,
+    "RuCaps": "Ж"
+  },
+  {
+    "Code": "Quote",
+    "En": null,
+    "Shift": "\"",
+    "Caps": null,
+    "Ru": "э",
+    "RuShift": null,
+    "RuCaps": "Э"
+  },
+  {
+    "Code": "Backslash",
+    "En": "\\",
+    "Shift": "|",
+    "Caps": null,
+    "Ru": null,
+    "RuShift": "/",
+    "RuCaps": null
+  },
+  {
+    "Code": "Enter",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "__enter"
+  }],
+  "row3" : [
+  {
+    "Code": "ShiftL",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "__shiftL"
+  },
+  {
+    "Code": "KeyZ",
+    "En": "z",
+    "Shift": null,
+    "Caps": "Z",
+    "Ru": "я",
+    "RuShift": null,
+    "RuCaps": "Я"
+  },
+  {
+    "Code": "KeyX",
+    "En": "x",
+    "Shift": null,
+    "Caps": "X",
+    "Ru": "ч",
+    "RuShift": null,
+    "RuCaps": "Ч"
+  },
+  {
+    "Code": "KeyC",
+    "En": "c",
+    "Shift": null,
+    "Caps": "C",
+    "Ru": "с",
+    "RuShift": null,
+    "RuCaps": "С"
+  },
+  {
+    "Code": "KeyV",
+    "En": "v",
+    "Shift": null,
+    "Caps": "V",
+    "Ru": "м",
+    "RuShift": null,
+    "RuCaps": "М"
+  },
+  {
+    "Code": "KeyB",
+    "En": "b",
+    "Shift": null,
+    "Caps": "B",
+    "Ru": "и",
+    "RuShift": null,
+    "RuCaps": "И"
+  },
+  {
+    "Code": "KeyN",
+    "En": "n",
+    "Shift": null,
+    "Caps": "N",
+    "Ru": "т",
+    "RuShift": null,
+    "RuCaps": "Т"
+  },
+  {
+    "Code": "KeyM",
+    "En": "m",
+    "Shift": null,
+    "Caps": "M",
+    "Ru": "ь",
+    "RuShift": null,
+    "RuCaps": "Ь"
+  },
+  {
+    "Code": "Comma",
+    "En": ",",
+    "Shift": "<",
+    "Caps": null,
+    "Ru": "б",
+    "RuShift": null,
+    "RuCaps": "Б"
+  },
+  {
+    "Code": "Period",
+    "En": ".",
+    "Shift": ">",
+    "Caps": null,
+    "Ru": "ю",
+    "RuShift": null,
+    "RuCaps": "Ю"
+  },
+  {
+    "Code": "Slash",
+    "En": "/",
+    "Shift": "?",
+    "Caps": null,
+    "Ru": ".",
+    "RuShift": ",",
+    "RuCaps": null
+  },
+  {
+    "Code": "ArrowUp",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_arrowUp"
+  },
+  {
+    "Code": "ShiftR",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "__shiftR"
+  }],
+  "row4" : [
+  {
+    "Code": "ControlLeft",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_cLeft"
+  },
+  {
+    "Code": "MetaLeft",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_mLeft"
+  },
+  {
+    "Code": "AltLeft",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_aLeft"
+  },
+  {
+    "Code": "Space",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_______space"
+  },
+  {
+    "Code": "AltRight",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_aRight"
+  },
+  {
+    "Code": "ArrowLeft",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_arrowLeft"
+  },
+  {
+    "Code": "ArrowDown",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_arrowDown"
+  },
+  {
+    "Code": "ArrowRight",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_arrowRight"
+  },
+  {
+    "Code": "ControlRight",
+    "En": null,
+    "Shift": null,
+    "Caps": null,
+    "Ru": null,
+    "RuShift": null,
+    "RuCaps": null,
+    "Service": "_cLeft"
+  }
+  ]
+}
