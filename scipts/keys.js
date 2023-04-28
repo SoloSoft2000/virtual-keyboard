@@ -232,12 +232,12 @@ const keys = {
     double: true,
     name: 'Enter',
   },
-  ShiftL: {
+  ShiftLeft: {
     service: true,
     double: true,
     name: 'Shift',
   },
-  ShiftR: {
+  ShiftRight: {
     service: true,
     double: true,
     name: 'Shift',

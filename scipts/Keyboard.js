@@ -39,7 +39,7 @@ const Keyboard = {
     ['Backslash', 'Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace'],
     ['Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Delete'],
     ['CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter'],
-    ['ShiftL', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftR'],
+    ['ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftRight'],
     ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'ControlRight']],
   updateKeyboard: () => {
     const keyArr = [].concat(...Keyboard.keyList);
@@ -55,10 +55,10 @@ const Keyboard = {
       event.target.classList.toggle('pushed');
       Keyboard.updateKeyboard();
     }
-    if ((event.target.id === 'ShiftL' || event.target.id === 'ShiftR')) {
+    if ((event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight')) {
       defaultLanguage.shiftFlag = !defaultLanguage.shiftFlag;
-      document.querySelector('#ShiftL').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
-      document.querySelector('#ShiftR').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
+      document.querySelector('#ShiftLeft').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
+      document.querySelector('#ShiftRight').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
       Keyboard.updateKeyboard();
       event.preventDefault();
     }
@@ -84,7 +84,7 @@ const Keyboard = {
         } else {
           keyButton.innerHTML = keys[Keyboard.keyList[row][keyI]][defaultLanguage.language];
         }
-        keyButton.addEventListener('mouseup', Keyboard.keyClick);
+        keyButton.addEventListener('mousedown', Keyboard.keyClick);
         newRow.append(keyButton);
       }
       node.append(newRow);

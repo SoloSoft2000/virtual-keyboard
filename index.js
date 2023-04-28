@@ -36,3 +36,15 @@ const board = Keyboard;
 board.create(displayBoard);
 wrapper.append(displayBoard);
 body.append(wrapper);
+
+function keyDown(event) {
+  console.log(event.code);
+  document.querySelector(`#${event.code}`).classList.add('pushed');
+}
+
+function keyUp(event) {
+  document.querySelector(`#${event.code}`).classList.remove('pushed');
+}
+
+window.addEventListener('keydown', keyDown);
+window.addEventListener('keyup', keyUp);
