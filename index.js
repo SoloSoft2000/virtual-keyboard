@@ -31,6 +31,7 @@ wrapper.append(textarea);
 
 const displayBoard = document.createElement('div');
 displayBoard.className = 'keyboard';
+displayBoard.oncontextmenu = null;
 const board = Keyboard;
 board.create(displayBoard);
 wrapper.append(displayBoard);

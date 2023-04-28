@@ -244,19 +244,19 @@ const keys = {
   },
   ArrowUp: {
     service: true,
-    name: 'Up',
+    name: '▲',
   },
   ArrowLeft: {
     service: true,
-    name: 'Left',
+    name: '◄',
   },
   ArrowDown: {
     service: true,
-    name: 'Down',
+    name: '▼',
   },
   ArrowRight: {
     service: true,
-    name: 'Rigth',
+    name: '►',
   },
   ControlRight: {
     service: true,

@@ -4,12 +4,11 @@ const defaultLanguage = {
   language: 'En',
   capsFlag: false,
   shiftFlag: false,
+  ctrlLeft: false,
+  ctrlRight: false,
+  altLeft: false,
+  altRight: false,
 };
-
-function keyClick(event) {
-  console.log(this.id, event.button);
-  defaultLanguage.language = 'En';
-}
 
 function getKeyText(keyName) {
   if (keys[keyName].name) { // service button
@@ -50,6 +49,20 @@ const Keyboard = {
       domKey.innerHTML = getKeyText(keyChange);
     }
   },
+  keyClick: (event) => {
+    if (event.target.id === 'CapsLock') {
+      defaultLanguage.capsFlag = !defaultLanguage.capsFlag;
+      event.target.classList.toggle('pushed');
+      Keyboard.updateKeyboard();
+    }
+    if ((event.target.id === 'ShiftL' || event.target.id === 'ShiftR')) {
+      defaultLanguage.shiftFlag = !defaultLanguage.shiftFlag;
+      document.querySelector('#ShiftL').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
+      document.querySelector('#ShiftR').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
+      Keyboard.updateKeyboard();
+      event.preventDefault();
+    }
+  },
   create: (node) => {
     for (let row = 0; row < Keyboard.keyList.length; row += 1) {
       const newRow = document.createElement('div');
@@ -71,7 +84,7 @@ const Keyboard = {
         } else {
           keyButton.innerHTML = keys[Keyboard.keyList[row][keyI]][defaultLanguage.language];
         }
-        keyButton.addEventListener('mouseup', keyClick);
+        keyButton.addEventListener('mouseup', Keyboard.keyClick);
         newRow.append(keyButton);
       }
       node.append(newRow);
