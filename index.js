@@ -39,8 +39,15 @@ body.append(wrapper);
 
 function keyDown(event) {
   if (!event.repeat) {
-    const domKey = document.querySelector(`#${event.code}`);
-    board.pushKey(domKey);
+    if (event.code === 'AltLeft' && event.ctrlKey) {
+      const domKey = document.querySelector(`#${event.code}`);
+      domKey.classList.add('pushed');
+      defaultLanguage.language = defaultLanguage.language === 'En' ? 'Ru' : 'En';
+      Keyboard.updateKeyboard();
+    } else {
+      const domKey = document.querySelector(`#${event.code}`);
+      board.pushKey(domKey);
+    }
   }
   event.preventDefault();
 }
@@ -51,7 +58,7 @@ function keyUp(event) {
     defaultLanguage.shiftFlag = false;
     Keyboard.updateKeyboard();
   }
-  domKey.classList.toggle('pushed');
+  domKey.classList.remove('pushed');
   event.preventDefault();
 }
 
