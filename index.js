@@ -1,7 +1,7 @@
-import keys from './keys.js'; // eslint-disable-line
+import keys from './keys.js';
 
 function keyClick(event) {
-  console.log(this.id, event.button); // eslint-disable-line
+  console.log(this.id, event.button);
 }
 
 const Keyboard = {
