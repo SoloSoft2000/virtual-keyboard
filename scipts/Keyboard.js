@@ -56,11 +56,15 @@ const Keyboard = {
     }
   },
   keyUp: (event) => {
+    if (event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight') {
+      defaultLanguage.shiftFlag = false;
+      Keyboard.updateKeyboard();
+    }
     event.target.classList.toggle('pushed');
     event.preventDefault();
   },
   pushKey: (domKey) => {
-    const serviceKeys = ['CapsLock', 'ShiftLeft', 'ShiftRight', 'ControlRight', 'ControlLeft', 'AltLeft', 'AltRight'];
+    const serviceKeys = ['CapsLock', 'ShiftLeft', 'ShiftRight'];
     if (serviceKeys.includes(domKey.id)) {
       if (domKey.id === 'CapsLock') {
         defaultLanguage.capsFlag = !defaultLanguage.capsFlag;
@@ -68,15 +72,14 @@ const Keyboard = {
         Keyboard.updateKeyboard();
       }
       if ((domKey.id === 'ShiftLeft' || domKey.id === 'ShiftRight')) {
-        defaultLanguage.shiftFlag = !defaultLanguage.shiftFlag;
-        document.querySelector('#ShiftLeft').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
-        document.querySelector('#ShiftRight').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
+        defaultLanguage.shiftFlag = true;
+        domKey.classList.toggle('pushed');
         Keyboard.updateKeyboard();
       }
     } else {
-      const keyArr = [].concat(...Keyboard.keyList);
-      if (keyArr.includes(domKey.id)) {
-        domKey.classList.toggle('pushed');
+      const keyArr = ['ControlLeft', 'ControlRight', 'AltLeft', 'AltRight', 'MetaLeft'];
+      domKey.classList.toggle('pushed');
+      if (!keyArr.includes(domKey.id)) {
         const domTextArea = document.querySelector('.textarea');
         domTextArea.value += getKeyText(domKey.id);
       }

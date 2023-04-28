@@ -47,6 +47,10 @@ function keyDown(event) {
 
 function keyUp(event) {
   const domKey = document.querySelector(`#${event.code}`);
+  if (domKey.id === 'ShiftLeft' || domKey.id === 'ShiftRight') {
+    defaultLanguage.shiftFlag = false;
+    Keyboard.updateKeyboard();
+  }
   domKey.classList.toggle('pushed');
   event.preventDefault();
 }
