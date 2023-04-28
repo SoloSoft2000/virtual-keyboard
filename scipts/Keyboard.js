@@ -49,18 +49,37 @@ const Keyboard = {
       domKey.innerHTML = getKeyText(keyChange);
     }
   },
-  keyClick: (event) => {
-    if (event.target.id === 'CapsLock') {
-      defaultLanguage.capsFlag = !defaultLanguage.capsFlag;
-      event.target.classList.toggle('pushed');
-      Keyboard.updateKeyboard();
-    }
-    if ((event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight')) {
-      defaultLanguage.shiftFlag = !defaultLanguage.shiftFlag;
-      document.querySelector('#ShiftLeft').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
-      document.querySelector('#ShiftRight').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
-      Keyboard.updateKeyboard();
+  keyDown: (event) => {
+    if (!event.repeat) {
+      Keyboard.pushKey(event.target);
       event.preventDefault();
+    }
+  },
+  keyUp: (event) => {
+    event.target.classList.toggle('pushed');
+    event.preventDefault();
+  },
+  pushKey: (domKey) => {
+    const serviceKeys = ['CapsLock', 'ShiftLeft', 'ShiftRight', 'ControlRight', 'ControlLeft', 'AltLeft', 'AltRight'];
+    if (serviceKeys.includes(domKey.id)) {
+      if (domKey.id === 'CapsLock') {
+        defaultLanguage.capsFlag = !defaultLanguage.capsFlag;
+        domKey.classList.toggle('pushed');
+        Keyboard.updateKeyboard();
+      }
+      if ((domKey.id === 'ShiftLeft' || domKey.id === 'ShiftRight')) {
+        defaultLanguage.shiftFlag = !defaultLanguage.shiftFlag;
+        document.querySelector('#ShiftLeft').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
+        document.querySelector('#ShiftRight').classList.toggle('pushed'); // event.target.classList.toggle('pushed');
+        Keyboard.updateKeyboard();
+      }
+    } else {
+      const keyArr = [].concat(...Keyboard.keyList);
+      if (keyArr.includes(domKey.id)) {
+        domKey.classList.toggle('pushed');
+        const domTextArea = document.querySelector('.textarea');
+        domTextArea.value += getKeyText(domKey.id);
+      }
     }
   },
   create: (node) => {
@@ -84,7 +103,8 @@ const Keyboard = {
         } else {
           keyButton.innerHTML = keys[Keyboard.keyList[row][keyI]][defaultLanguage.language];
         }
-        keyButton.addEventListener('mousedown', Keyboard.keyClick);
+        keyButton.addEventListener('mousedown', Keyboard.keyDown);
+        keyButton.addEventListener('mouseup', Keyboard.keyUp);
         newRow.append(keyButton);
       }
       node.append(newRow);

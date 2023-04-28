@@ -38,12 +38,17 @@ wrapper.append(displayBoard);
 body.append(wrapper);
 
 function keyDown(event) {
-  console.log(event.code);
-  document.querySelector(`#${event.code}`).classList.add('pushed');
+  if (!event.repeat) {
+    const domKey = document.querySelector(`#${event.code}`);
+    board.pushKey(domKey);
+  }
+  event.preventDefault();
 }
 
 function keyUp(event) {
-  document.querySelector(`#${event.code}`).classList.remove('pushed');
+  const domKey = document.querySelector(`#${event.code}`);
+  domKey.classList.toggle('pushed');
+  event.preventDefault();
 }
 
 window.addEventListener('keydown', keyDown);
