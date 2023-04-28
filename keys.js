@@ -377,59 +377,75 @@ const keys = {
   },
   Backspace: {
     service: true,
+    name: 'Back',
   },
   Tab: {
     service: true,
     double: true,
+    name: 'Tab',
   },
   Delete: {
     service: true,
+    name: 'Del',
   },
   CapsLock: {
     service: true,
     double: true,
+    name: 'Caps',
   },
   Enter: {
     service: true,
     double: true,
+    name: 'Enter',
   },
   ShiftL: {
     service: true,
     double: true,
+    name: 'Shift',
   },
   ShiftR: {
     service: true,
     double: true,
+    name: 'Shift',
   },
   ArrowUp: {
     service: true,
+    name: 'Up',
   },
   ArrowLeft: {
     service: true,
+    name: 'Left',
   },
   ArrowDown: {
     service: true,
+    name: 'Down',
   },
   ArrowRight: {
     service: true,
+    name: 'Rigth',
   },
   ControlRight: {
     service: true,
+    name: 'Ctrl',
   },
   ControlLeft: {
     service: true,
+    name: 'Ctrl',
   },
   Space: {
     service: true,
   },
   AltLeft: {
     service: true,
+    name: 'Alt',
   },
   AltRight: {
     service: true,
+    name: 'Alt',
   },
   MetaLeft: {
     service: true,
+    name: 'Win',
   },
 };
 

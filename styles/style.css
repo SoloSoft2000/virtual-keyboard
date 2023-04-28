@@ -8,7 +8,27 @@ h1 {
 
 .keyboard {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  width: 800px;
-  border: 2px solid black;
+  width: 50%;
+}
+
+.row {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.key__button {
+  width: 6.25%;
+}
+
+.key__double {
+  width: 13%;
+}
+
+.key__space {
+  width: 46.4%;
 }/*# sourceMappingURL=style.css.map */
