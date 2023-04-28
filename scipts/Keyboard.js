@@ -1,9 +1,38 @@
 import keys from './keys.js';
 
-const defaultLanguage = { language: 'En' };
+const defaultLanguage = {
+  language: 'En',
+  capsFlag: false,
+  shiftFlag: false,
+};
 
 function keyClick(event) {
   console.log(this.id, event.button);
+  defaultLanguage.language = 'En';
+}
+
+function getKeyText(keyName) {
+  if (keys[keyName].name) { // service button
+    return keys[keyName].name;
+  }
+
+  let result = keys[keyName][defaultLanguage.language] || keys[keyName].En;
+  if (defaultLanguage.capsFlag && !defaultLanguage.shiftFlag) { // Заглавные буквы
+    result = result.toLocaleUpperCase();
+  }
+
+  let flagString = defaultLanguage.language;
+  if (defaultLanguage.shiftFlag) {
+    flagString += 'Shift';
+    result = keys[keyName][flagString] || keys[keyName].EnShift || result;
+    if (defaultLanguage.capsFlag) {
+      result = result.toLocaleLowerCase();
+    } else {
+      result = result.toLocaleUpperCase();
+    }
+  }
+
+  return result;
 }
 
 const Keyboard = {
@@ -14,7 +43,12 @@ const Keyboard = {
     ['ShiftL', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftR'],
     ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'ControlRight']],
   updateKeyboard: () => {
-    console.log('update', defaultLanguage.language);
+    const keyArr = [].concat(...Keyboard.keyList);
+    for (let iterator = 0; iterator < keyArr.length; iterator += 1) {
+      const keyChange = keyArr[iterator];
+      const domKey = document.querySelector(`#${keyChange}`);
+      domKey.innerHTML = getKeyText(keyChange);
+    }
   },
   create: (node) => {
     for (let row = 0; row < Keyboard.keyList.length; row += 1) {
