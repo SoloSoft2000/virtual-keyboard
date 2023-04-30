@@ -115,6 +115,10 @@ const Keyboard = {
             idx -= 1;
             break;
           }
+          case 'Delete': {
+            domTextArea.value = sBef + sAft.slice(1);
+            break;
+          }
           default:
             break;
         }
