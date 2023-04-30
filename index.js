@@ -20,7 +20,7 @@ const wrapper = document.createElement('div');
 wrapper.className = 'wrapper';
 const headerInput = document.createElement('header');
 headerInput.className = 'header';
-headerInput.innerHTML = '<h1>Virtual Keyboard<span class="subtitle">(Windows)</span></h1>';
+headerInput.innerHTML = '<h1>Virtual Keyboard</h1>';
 wrapper.append(headerInput);
 
 const textarea = document.createElement('textarea');
@@ -35,6 +35,12 @@ displayBoard.className = 'keyboard';
 displayBoard.oncontextmenu = null;
 const board = Keyboard;
 board.create(displayBoard);
+
+const instructionBlock = document.createElement('div');
+instructionBlock.className = 'instruction';
+instructionBlock.innerHTML = 'Клавиатура создана в операционной системе Windows<br>Для переключения языка комбинация: ctrl + левый alt';
+wrapper.append(instructionBlock);
+
 wrapper.append(displayBoard);
 body.append(wrapper);
 
@@ -55,15 +61,14 @@ function keyDown(event) {
 
 function keyUp(event) {
   const domKey = document.querySelector(`#${event.code}`);
-  if (!domKey) {
-    return;
+  if (domKey) {
+    if (domKey.id === 'ShiftLeft' || domKey.id === 'ShiftRight') {
+      defaultLanguage.shiftFlag = false;
+      Keyboard.updateKeyboard();
+    }
+    domKey.classList.remove('pushed');
+    event.preventDefault();
   }
-  if (domKey.id === 'ShiftLeft' || domKey.id === 'ShiftRight') {
-    defaultLanguage.shiftFlag = false;
-    Keyboard.updateKeyboard();
-  }
-  domKey.classList.remove('pushed');
-  event.preventDefault();
 }
 
 window.addEventListener('keydown', keyDown);

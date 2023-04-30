@@ -93,7 +93,7 @@ const Keyboard = {
       let idx = domTextArea.selectionStart;
       const sBef = domTextArea.value.substr(0, idx);
       const sAft = domTextArea.value.substr(idx, domTextArea.value.length);
-      if (!keys[domKey.id].name || ['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(domKey.id)) { // domKey.id === 'Space') {
+      if (!keys[domKey.id].name || ['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(domKey.id)) {
         domTextArea.value = sBef + getKeyText(domKey.id) + sAft;
         idx += 1;
       } else {
