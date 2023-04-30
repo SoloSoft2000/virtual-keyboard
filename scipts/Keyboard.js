@@ -110,6 +110,11 @@ const Keyboard = {
             idx += 1;
             break;
           }
+          case 'Backspace': {
+            domTextArea.value = sBef.slice(0, -1) + sAft;
+            idx -= 1;
+            break;
+          }
           default:
             break;
         }
