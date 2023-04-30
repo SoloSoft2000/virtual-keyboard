@@ -55,6 +55,9 @@ function keyDown(event) {
 
 function keyUp(event) {
   const domKey = document.querySelector(`#${event.code}`);
+  if (!domKey) {
+    return;
+  }
   if (domKey.id === 'ShiftLeft' || domKey.id === 'ShiftRight') {
     defaultLanguage.shiftFlag = false;
     Keyboard.updateKeyboard();

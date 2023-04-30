@@ -56,7 +56,7 @@ const Keyboard = {
     }
   },
   keyUp: (event) => {
-    if ((event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight')) {
+    if (event.target && (event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight')) {
       defaultLanguage.shiftFlag = false;
       Keyboard.updateKeyboard();
       document.querySelector('#ShiftLeft').classList.remove('pushed');
@@ -72,6 +72,9 @@ const Keyboard = {
     }
   },
   pushKey: (domKey) => {
+    if (!domKey) {
+      return;
+    }
     const upperKeys = ['CapsLock', 'ShiftLeft', 'ShiftRight'];
     if (upperKeys.includes(domKey.id)) {
       if (domKey.id === 'CapsLock') {
@@ -90,7 +93,7 @@ const Keyboard = {
       let idx = domTextArea.selectionStart;
       const sBef = domTextArea.value.substr(0, idx);
       const sAft = domTextArea.value.substr(idx, domTextArea.value.length);
-      if (!keys[domKey.id].name || domKey.id === 'Space') {
+      if (!keys[domKey.id].name || ['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(domKey.id)) { // domKey.id === 'Space') {
         domTextArea.value = sBef + getKeyText(domKey.id) + sAft;
         idx += 1;
       } else {
