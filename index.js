@@ -1,18 +1,6 @@
-import { Keyboard, defaultLanguage } from './scipts/Keyboard.js';
+import flagsApp from './scipts/flagsApp.js';
+import Keyboard from './scipts/Keyboard.js';
 
-function setLocalStorage() {
-  localStorage.setItem('language', defaultLanguage.language);
-}
-window.addEventListener('beforeunload', setLocalStorage);
-
-function getLocalStorage() {
-  if (localStorage.getItem('language')) {
-    defaultLanguage.language = localStorage.getItem('language');
-  } else {
-    defaultLanguage.language = 'En';
-  }
-}
-window.addEventListener('load', getLocalStorage);
 window.addEventListener('load', Keyboard.updateKeyboard);
 
 const body = document.querySelector('body');
@@ -49,7 +37,7 @@ function keyDown(event) {
     if (event.code === 'AltLeft' && event.ctrlKey) {
       const domKey = document.querySelector(`#${event.code}`);
       domKey.classList.add('pushed');
-      defaultLanguage.language = defaultLanguage.language === 'En' ? 'Ru' : 'En';
+      flagsApp.language = flagsApp.language === 'En' ? 'Ru' : 'En';
       Keyboard.updateKeyboard();
     } else {
       const domKey = document.querySelector(`#${event.code}`);
@@ -63,7 +51,7 @@ function keyUp(event) {
   const domKey = document.querySelector(`#${event.code}`);
   if (domKey) {
     if (domKey.id === 'ShiftLeft' || domKey.id === 'ShiftRight') {
-      defaultLanguage.shiftFlag = false;
+      flagsApp.shiftFlag = false;
       Keyboard.updateKeyboard();
     }
     domKey.classList.remove('pushed');
