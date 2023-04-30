@@ -56,16 +56,24 @@ const Keyboard = {
     }
   },
   keyUp: (event) => {
-    if (event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight') {
+    if ((event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight')) {
       defaultLanguage.shiftFlag = false;
       Keyboard.updateKeyboard();
+      document.querySelector('#ShiftLeft').classList.remove('pushed');
+      document.querySelector('#ShiftRight').classList.remove('pushed');
+    } else {
+      event.target.classList.toggle('pushed');
     }
-    event.target.classList.toggle('pushed');
     event.preventDefault();
   },
+  mouseOut: (event) => {
+    if (event.target.classList.contains('pushed') && !(event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight')) {
+      Keyboard.keyUp(event);
+    }
+  },
   pushKey: (domKey) => {
-    const serviceKeys = ['CapsLock', 'ShiftLeft', 'ShiftRight'];
-    if (serviceKeys.includes(domKey.id)) {
+    const upperKeys = ['CapsLock', 'ShiftLeft', 'ShiftRight'];
+    if (upperKeys.includes(domKey.id)) {
       if (domKey.id === 'CapsLock') {
         defaultLanguage.capsFlag = !defaultLanguage.capsFlag;
         domKey.classList.toggle('pushed');
@@ -77,13 +85,36 @@ const Keyboard = {
         Keyboard.updateKeyboard();
       }
     } else {
-      const keyArr = ['ControlLeft', 'ControlRight', 'AltLeft', 'AltRight', 'MetaLeft'];
       domKey.classList.toggle('pushed');
-      if (!keyArr.includes(domKey.id)) {
-        const domTextArea = document.querySelector('.textarea');
-        domTextArea.value += getKeyText(domKey.id);
+      const domTextArea = document.querySelector('.textarea');
+      let idx = domTextArea.selectionStart;
+      const sBef = domTextArea.value.substr(0, idx);
+      const sAft = domTextArea.value.substr(idx, domTextArea.value.length);
+      if (!keys[domKey.id].name || domKey.id === 'Space') {
+        domTextArea.value = sBef + getKeyText(domKey.id) + sAft;
+        idx += 1;
+      } else {
+        switch (domKey.id) {
+          case 'Tab': {
+            const tabStr = '    ';
+            domTextArea.value = sBef + tabStr + sAft;
+            idx += 4;
+            break;
+          }
+          case 'Enter': {
+            const enterStr = '\n';
+            domTextArea.value = sBef + enterStr + sAft;
+            idx += 1;
+            break;
+          }
+          default:
+            break;
+        }
       }
+      domTextArea.setSelectionRange(idx, idx);
     }
+    const domTextArea = document.querySelector('.textarea');
+    domTextArea.focus();
   },
   create: (node) => {
     for (let row = 0; row < Keyboard.keyList.length; row += 1) {
@@ -108,6 +139,7 @@ const Keyboard = {
         }
         keyButton.addEventListener('mousedown', Keyboard.keyDown);
         keyButton.addEventListener('mouseup', Keyboard.keyUp);
+        keyButton.addEventListener('mouseout', Keyboard.mouseOut);
         newRow.append(keyButton);
       }
       node.append(newRow);

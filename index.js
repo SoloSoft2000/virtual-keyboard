@@ -25,6 +25,7 @@ wrapper.append(headerInput);
 
 const textarea = document.createElement('textarea');
 textarea.className = 'textarea';
+textarea.autofocus = true;
 textarea.rows = 6;
 textarea.cols = 50;
 wrapper.append(textarea);
