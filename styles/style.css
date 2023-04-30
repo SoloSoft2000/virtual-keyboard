@@ -66,6 +66,10 @@ h1 {
   transition: 0.3s ease-in-out;
 }
 
+.caps-on {
+  border-bottom: 2px solid green;
+}
+
 .key__double {
   width: 13%;
 }

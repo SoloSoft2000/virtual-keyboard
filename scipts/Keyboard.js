@@ -80,6 +80,7 @@ const Keyboard = {
       if (domKey.id === 'CapsLock') {
         defaultLanguage.capsFlag = !defaultLanguage.capsFlag;
         domKey.classList.toggle('pushed');
+        domKey.classList.toggle('caps-on');
         Keyboard.updateKeyboard();
       }
       if ((domKey.id === 'ShiftLeft' || domKey.id === 'ShiftRight')) {
